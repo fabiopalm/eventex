@@ -1,36 +1,55 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="description" content="EventeX" />
-  <meta http-equiv='content-Language' content='en-US' />
-  <link type="image/x-icon" href="{{ STATIC_URL }}favicon.ico" rel="shortcut icon" />
+    <meta charset="utf-8">
+    <title>EventeX - Aguarde o maior evento de todos os tempos!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="@fabiopalm">
 
-  <title>EventeX</title>
-
-  <link type="text/css" href="{{ STATIC_URL }}css/style.css" rel="stylesheet" media="screen" />
-
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+    <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet">
 </head>
-<body>
-  <div id="page">
-    <div id="header">
-      <center>
-        <img src="{{ STATIC_URL }}img/logo.png" alt="EventeX" />
-      </center>
+
+<body data-spy="scroll" data-target=".subnav" data-offset="80">
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="brand" href="/" rel="tooltip" title="teste">EventeX<span class="icon-share-alt"></span></a>
+				<div class="nav-collapse" id="main-menu">
+					<ul class="nav pull-right" id="main-menu-right">
+						<li><a rel="tooltip" target="_blank" href="/#cadastre-se">Cadastre-se (em breve)</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="container">
+        <div id="page">
+            <div id="content">
+                <a id="main-content"></a>
+                <div>
+                  <div class="hero-unit">
+                        <h1>O maior evento do mundo!</h1>
+                        <p>Depois do Dev in Rio, o eventex é o maior evento de tecnologia, astronomia, gastronomia, teologia, minerologia, hipsterlogia da face da terra!</p>
+                  </div>
+                  <div class="row-fluid">
+                    <div class="span4">
+                      <h2>Sobre</h2>
+                      <p>Evento criado pela Morena, a mais magnata de todas as clientes, responsável por tudo no mundo.</p>
+                    </div>
+                    <div class="span4">
+                      <h2>Venha</h2>
+                      <p>Você não pode perder esta grande oportundiade! Abertura das inscrições em 20/01/2013.</p>
+                    </div>
+                    <div class="span4">
+                        <img src="{{ STATIC_URL }}imgs/logo_e.png" />
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <hr>
-    <div id="content">
-      <h1>Bem-vindo ao EventeX!</h1>
-      <p>O evento mais sensacional do ano depois do Dev in Rio!</p>
-      <p>Você não pode perder esta oportunidade!</p>
-      <p><strong>Abertura das inscrições em 30/09/2012.</strong></p>
-      <p>Para dúvidas e mais informações entre em contato com <a href="mailto:eventex@eventex.com.br">eventex@eventex.com.br</a></p>
-    </div>
-    <hr>
-    <div id="footer">
-      <p>&copy; 2012. <a rel="license" href="http://eventex.herike.com">EventeX</a>, some rights reserved. <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/br/80x15.png" /></a><a href="http://www.djangoproject.com/" id="django"><img src="http://media.djangoproject.com/img/badges/djangosite80x15.gif" border="0" alt="A Django site." title="A Django site." /></a></p>
-    </div>
-  </div>
 </body>
 </html>

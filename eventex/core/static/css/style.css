@@ -1,313 +1,321 @@
+/* Add additional stylesheets below
+-------------------------------------------------- */
 /*
-CSS
+  Bootstrap's documentation styles
+  Special styles for presenting Bootstrap's documentation and examples
 */
 
-html {
-  background-color: #E8DDCB;
-}
 
+/* Body and structure
+-------------------------------------------------- */
 body {
+  position: relative;
+  padding-top: 80px;
+/*  background-color: #fff;
+  background-image: url(../img/grid-18px-masked.png);*/
+  background-repeat: repeat-x;
+  background-position: 0 40px;
+}
+
+/* Jumbotrons
+-------------------------------------------------- */
+.jumbotron {
+  position: relative;
+}
+.jumbotron h1 {
+  margin-bottom: 9px;
+  font-size: 81px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+.jumbotron p {
+  margin-bottom: 18px;
+  font-weight: 300;
+}
+.jumbotron .btn-large {
+  font-size: 20px;
+  font-weight: normal;
+  padding: 14px 24px;
+  margin-right: 10px;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+.jumbotron .btn-large small {
+  font-size: 14px;
+}
+
+
+/* Specific jumbotrons
+------------------------- */
+/* supporting docs pages */
+.subhead {
+  padding-bottom: 0;
+  margin-bottom: 9px;
+}
+.subhead h1 {
+  font-size: 54px;
+}
+
+/* Subnav */
+.subnav {
+  margin-bottom: 60px;
+  width: 100%;
+  height: 36px;
+  background-color: #eeeeee; /* Old browsers */
+  background-repeat: repeat-x; /* Repeat the gradient */
+  background-image: -moz-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%); /* FF3.6+ */
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f5f5f5), color-stop(100%,#eeeeee)); /* Chrome,Safari4+ */
+  background-image: -webkit-linear-gradient(top, #f5f5f5 0%,#eeeeee 100%); /* Chrome 10+,Safari 5.1+ */
+  background-image: -ms-linear-gradient(top, #f5f5f5 0%,#eeeeee 100%); /* IE10+ */
+  background-image: -o-linear-gradient(top, #f5f5f5 0%,#eeeeee 100%); /* Opera 11.10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+  background-image: linear-gradient(top, #f5f5f5 0%,#eeeeee 100%); /* W3C */
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+.subnav .nav {
+  margin-bottom: 0;
+}
+.subnav .nav > li > a {
   margin: 0;
-  padding: 0;
-  font: .625em Georgia, Serif;
-  background-color: #E8DDCB;
-  color: #363636;
+  padding-top:    11px;
+  padding-bottom: 11px;
+  border-left: 1px solid #f5f5f5;
+  border-right: 1px solid #e5e5e5;
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
+}
+.subnav .nav > .active > a,
+.subnav .nav > .active > a:hover {
+  padding-left: 13px;
+  color: #777;
+  background-color: #e9e9e9;
+  border-right-color: #ddd;
+  border-left: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.05);
+     -moz-box-shadow: inset 0 3px 5px rgba(0,0,0,.05);
+          box-shadow: inset 0 3px 5px rgba(0,0,0,.05);
+}
+.subnav .nav > .active > a .caret,
+.subnav .nav > .active > a:hover .caret {
+  border-top-color: #777;
+}
+.subnav .nav > li:first-child > a,
+.subnav .nav > li:first-child > a:hover {
+  border-left: 0;
+  padding-left: 12px;
+  -webkit-border-radius: 4px 0 0 4px;
+     -moz-border-radius: 4px 0 0 4px;
+          border-radius: 4px 0 0 4px;
+}
+.subnav .nav > li:last-child > a {
+  border-right: 0;
+}
+.subnav .dropdown-menu {
+  -webkit-border-radius: 0 0 4px 4px;
+     -moz-border-radius: 0 0 4px 4px;
+          border-radius: 0 0 4px 4px;
 }
 
-#page {
-  margin: 0 auto;
-  padding: 20px 0 0 0;
-  width: 800px;
-  font-size: 1.2em;
+/* Fixed subnav on scroll, but only for 980px and up (sorry IE!) */
+@media (min-width: 980px) {
+  .subnav-fixed {
+    position: fixed;
+    top: 40px;
+    left: 0;
+    right: 0;
+    z-index: 1020; /* 10 less than .navbar-fixed to prevent any overlap */
+    border-color: #d5d5d5;
+    border-width: 0 0 1px; /* drop the border on the fixed edges */
+    -webkit-border-radius: 0;
+       -moz-border-radius: 0;
+            border-radius: 0;
+    -webkit-box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1);
+       -moz-box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1);
+            box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false); /* IE6-9 */
+  }
+  .subnav-fixed .nav {
+    width: 938px;
+    margin: 0 auto;
+    padding: 0 1px;
+  }
+  .subnav .nav > li:first-child > a,
+  .subnav .nav > li:first-child > a:hover {
+    -webkit-border-radius: 0;
+       -moz-border-radius: 0;
+            border-radius: 0;
+  }
 }
 
-/*
-General
-*/
-
-p {
-	margin: 1.4em 0;
-	padding: 0;
-	line-height: 1.4em;
-}
-
-img {
-	border: 0;
-}
-
-hr {
-	display: none;
-}
-
-a,
-a:link,
-a:active,
-a:visited {
-	color: #033649;
-	text-decoration: none;
-	border-bottom: 1px dotted #033649;
-}
-
-a:hover {
-	border-bottom: 1px solid #033649;
-}
-
-blockquote {
-  margin: auto;
-  padding: 0;
-  width: 520px;
-  background: transparent url(../images/quote-left.gif) no-repeat 0 0;
-  text-align: center;
-  color: #033649;
-  font-size: 2em;
-  font-style: italic;
-}
-
-blockquote p {
-	line-height: 2em;
-	background: transparent url(../images/quote-right.gif) no-repeat bottom right;
-}
-
-/*
-Headers
-*/
-
-h1,
-h2,
-h3,
-h4 {
-	line-height: 1.286;
-	margin: .4em 0;
-	padding: 0;
-	text-shadow: 1px 1px 0 #fff;
-}
-
-h1 {
-	font-weight: normal;
-	font-size: 2.2em;
-	text-align: center;
-	color: #031634;
-}
-
-h2 {
-	margin: .643em 0;
-	font-weight: normal;
-	font-size: 1.8em;
-	color: #033649;
-	font-style: italic;
-	clear: both;
-}
-
-h3 {
-	margin: .643em 0;
-	font-weight: normal;
-	font-size: 1.6em;
-	color: #036564;
-}
-
-h4 {
-	margin: .643em 0;
-	font-weight: normal;
-	font-size: 1.4em;
-	color: #036564;
-}
-
-h1#about,
-h2#badge-subtitle {
-  margin: 1em 0 .4em 0;
-  font-size: 1.3em;
-  color: #363636;
-}
-
-h2#badge-subtitle {
-  text-align: center;
-}
-
-/*
-Header
-*/
-
-#header {
-  border-bottom: 1px dotted #CDB380;
-}
-
-#header #logo {
-  margin: auto;
-  width: 300px;
-  height: 215px;
-  background: transparent url(../images/logo-small-acts.png) no-repeat 0 0;
-  text-indent: -9999px;
-}
-
-#header #logo a {
-  display: block;
-  width: 300px;
-  height: 215px;
-  border: none;
-}
-
-#header blockquote p {
-  text-shadow: 1px 1px 0 #fff;
-}
-
-/*
-Content
-*/
-
-#content {
-  margin: 0 20px;
-  font-size: 1.4em;
-  text-shadow: 1px 1px 0 #fff;
-}
-
-ul#acts li {
-  line-height: 1.4em;
-}
-
-ul#members {
-	list-style-type: none;
-	margin: 0 0 20px 0;
-	padding: 0;
-	font-size: .76em;
-}
-
-ul#members li {
-	width: 252px;
-	line-height: 2em;
-	text-align: center;
-	float: left;
-}
-
-#badge-content {
-  font-size: .8em;
-  margin: 0 0 20px 0;
-}
-
-#badge-content p {
-  margin: 1em 0 0 0;
-}
-
-#badge-content a {
-  border: none;
-}
-
-#badge-content textarea {
-  margin: 0;
-  padding: 10px;
-  display: block;
-  width: 650px;
-  height: 50px;
-  border: none;
-  border-top: 1px solid #036564;
-  border-bottom: 1px solid #036564;
-  color: #031634;
-  background-color: #fff;
-}
-
-/*
-Forms
-*/
-
-form {
-  margin: 20px 0;
-  padding: 0;
-}
-
-fieldset {
-  margin: 0;
-  padding: 20px;
-}
-
-form div {
-  padding: 0 0 5px 0;
-}
-
-form input {
-  font-size: 1.1em;
-  padding: 2px;
-  display: block;
-  width: 400px;
-}
-
-.error {
-  color: #900;
-}
-
-form p {
-  /*margin: -35px 0 0 440px;*/
-  padding: 8px;
-  width: 300px;
-  /*position: absolute;*/
-  /*border: 1px solid #033649;*/
-  /*background-color: #036564;*/
-  /*color: #fff;*/
-  /*font-size: .9em;*/
-  font-family: Arial, Helvetica, Sans-Serif;
-}
-
-form p em {
-  /*font-size: 1.2em;*/
-  /*display: block;*/
-}
-
-.info_label {
-  display: none;
-  text-shadow: none;
-}
-
-.button {
-  width: 200px;
-  text-align: center;
-  padding: 4px;
-  font-size: 1.1em;
-  background-color: #031634;
-  color: #fff;
-  border: none;
-  text-shadow: -1px -1px 0 #000;
-}
-
-/*
-Footer
-*/
-
-#footer {
-  clear: both;
-  font-size: .9em;
-  padding: 0 20px;
-  border-top: 1px dotted #CDB380;
-}
-
-#footer img {
-  vertical-align: middle;
-}
-
-#footer #django {
+.bsa {
   float: right;
+  max-width: 400px;
+  padding: 0;
+}
+
+body .one .bsa_it_ad {
+  margin-bottom: -10px;
+  background: none;
   border: none;
+  font-family: inherit;
+  color: inherit;
 }
 
-/*
-Clearfix
-*/
+body .one .bsa_it_ad .bsa_it_t,
+body .one .bsa_it_ad .bsa_it_d {
+  color: inherit;
+  font-size: inherit;
+}
 
-.clearfix:after {
-    content: ".";
+body .one .bsa_it_p {
+  display: none;
+}
+
+#bsap_aplink {
+  float: right;
+  position: relative;
+  /*top: -25px;*/
+  right: 10px;
+  height: 0;
+  font-size: 11px;
+}
+
+@media (max-width: 768px) {
+
+  .bsa {
+    float: none;
+  }
+
+}
+
+
+/* Responsive Docs
+-------------------------------------------------- */
+@media (max-width: 480px) {
+
+  /* Reduce padding above jumbotron */
+  body {
+    padding-top: 70px;
+  }
+
+  /* Adjust the jumbotron */
+  .jumbotron h1,
+  .jumbotron p {
+    text-align: center;
+    margin-right: 0;
+  }
+  .jumbotron h1 {
+    font-size: 45px;
+    margin-right: 0;
+  }
+  .jumbotron p {
+    margin-right: 0;
+    margin-left: 0;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .jumbotron .btn {
     display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
+    font-size: 18px;
+    padding: 10px 14px;
+    margin: 0 auto 10px;
+  }
+
 }
 
-.clearfix {
-	display: inline-table;
+
+@media (max-width: 768px) {
+
+  /* Remove any padding from the body */
+  body {
+    padding-top: 0;
+  }
+
+  /* Jumbotron buttons */
+  .jumbotron .btn {
+    margin-bottom: 10px;
+  }
+
+  /* Subnav */
+  .subnav {
+    position: static;
+    top: auto;
+    z-index: auto;
+    width: auto;
+    height: auto;
+    background: #fff; /* whole background property since we use a background-image for gradient */
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+  }
+  .subnav .nav > li {
+    float: none;
+  }
+  .subnav .nav > li > a {
+    border: 0;
+  }
+  .subnav .nav > li + li > a {
+    border-top: 1px solid #e5e5e5;
+  }
+  .subnav .nav > li:first-child > a,
+  .subnav .nav > li:first-child > a:hover {
+      -webkit-border-radius: 4px 4px 0 0;
+         -moz-border-radius: 4px 4px 0 0;
+              border-radius: 4px 4px 0 0;
+  }
 }
 
-/* Hides from IE-mac \*/
-.clearfix {
-	height: 1%;
+
+@media (min-width: 480px) and (max-width: 768px) {
+
+  /* Scale down the jumbotron content */
+  .jumbotron h1 {
+    font-size: 54px;
+  }
+  .jumbotron p {
+    margin-right: 0;
+    margin-left: 0;
+  }
 }
 
-.clearfix {
-	display: block;
+
+@media (min-width: 768px) and (max-width: 980px) {
+
+  /* Remove any padding from the body */
+  body {
+    padding-top: 0;
+  }
+
+  /* Scale down the jumbotron content */
+  .jumbotron h1 {
+    font-size: 72px;
+  }
 }
-/* End hide from IE-mac */
+
+
+@media (max-width: 980px) {
+
+  /* Unfloat brand */
+  .navbar-fixed-top .brand {
+    float: left;
+    margin-left: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+
+/* LARGE DESKTOP SCREENS */
+@media (min-width: 1210px) {
+
+  /* Update subnav container */
+  .subnav-fixed .nav {
+    width: 1168px; /* 2px less to account for left/right borders being removed when in fixed mode */
+  }
+}
